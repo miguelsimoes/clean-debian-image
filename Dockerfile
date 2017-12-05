@@ -1,6 +1,9 @@
 FROM debian:jessie
 MAINTAINER "Miguel Simões <msimoes@gmail.com>"
 #
+# Ensure that the server has the correct timezone installed
+RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+#
 # Ensure that the machine is always built with the most recent versions
 # and removing all non required artifacts to minimize the image size
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qqq
