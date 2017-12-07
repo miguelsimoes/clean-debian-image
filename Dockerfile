@@ -8,6 +8,15 @@ RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 # and removing all non required artifacts to minimize the image size
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qqq
 #
+# Before we make the upgrade we will add a new repository, so we need the
+# wget package to retrieve the GPG key for it
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qqq wget apt-transport-https
+#
+# Ensure we have the latest version repositories available
+RUN echo "deb http://packages.sury.org/php jessie main" | tee /etc/apt/sources.list.d/dotdeb.list
+RUN wget --quiet -O - https://packages.sury.org/php/apt.gpg | apt-key add -
+
+#
 # Let us ensure that the TERM is always set when we initialize the container
 ENV TERM xterm
 #
