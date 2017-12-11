@@ -10,7 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qqq
 #
 # Before we make the upgrade we will add a new repository, so we need the
 # wget package to retrieve the GPG key for it
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qqq wget apt-transport-https
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qqq wget apt-transport-https apt-utils
 #
 # Ensure we have the latest version repositories available
 RUN echo "deb http://packages.sury.org/php jessie main" | tee /etc/apt/sources.list.d/dotdeb.list
