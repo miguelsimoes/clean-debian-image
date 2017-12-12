@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER "Miguel Simões <msimoes@gmail.com>"
+LABEL maintainer="Miguel Simões <msimoes@gmail.com>"
 #
 # Ensure that the server has the correct timezone installed
 RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime
