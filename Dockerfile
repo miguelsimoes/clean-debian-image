@@ -24,7 +24,7 @@ ENV TERM xterm
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y -qqq
 RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -qqq
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qqq nano
-RUN DEBIAN_FRONTEND=noninteractive apt-get purge eject wget -y -qqq
+RUN DEBIAN_FRONTEND=noninteractive apt-get purge eject modemmanager wget -y -qqq
 RUN DEBIAN_FRONTEND=noninteractive apt-get autoremove --purge -y -qqq
 RUN DEBIAN_FRONTEND=noninteractive apt-get clean -y -qqq
 RUN DEBIAN_FRONTEND=noninteractive apt-get autoclean -y -qqq
